@@ -1,9 +1,11 @@
+package Day1_b;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Day2 {
+public class Day1_b {
     public static void main(String[] args) {
         System.out.println("The dial starts by pointing at 50.");
 
