@@ -10,6 +10,8 @@ public class Day2 {
 
         String filePath = "input.txt";
         String[] fileContent = FileReaderToArray.readFileToArray(filePath);
+        File myFile = new File(filePath);
+        System.out.println(myFile.getAbsolutePath());
 
         Dial myDial = new Dial();
 
@@ -19,16 +21,25 @@ public class Day2 {
             
             char direction = line.charAt(0);
             int turnAmt = Integer.parseInt(line.substring(1));
-        
-            System.out.println("The dial is rotated " + line + " to point at " + myDial.turnDial(direction, turnAmt%100) + ".");
-            if (myDial.currentPosition == 0)
-                passcode++;
+            int startPos = myDial.currentPosition;
+            int endPos = myDial.turnDial(direction, turnAmt%100);
+            
+            passcode += turnAmt/100;
 
-            passcode += turnAmt/100;    
+            System.out.print("The dial is rotated " + line + " to point at " + endPos);
+            if(direction == 'R')
+                if (endPos < startPos)
+                    passcode++;
+
+            if(direction == 'L')
+                if (endPos > startPos)
+                    passcode++;
+
+            System.out.print(".");
+              
         }
 
         System.out.println("The passcode is: " + passcode);
-
 
     }
 
