@@ -12,14 +12,16 @@ public class Day2_a {
         String filePath = "Day2_a/input.txt";
         String[] fileContent = FileReaderToArray.readFileToArray(filePath);
 
+        //Splits the file into cells of each number 
         fileContent = fileContent[0].split(",|-");
 
-    
+        ArrayList<Integer> inputs = new ArrayList<>();
 
+        for(String in : fileContent)
+            inputs.add(Integer.parseInt(in));
 
-        
+        System.err.println(inputs);
 
-        return;
     }
 
 
