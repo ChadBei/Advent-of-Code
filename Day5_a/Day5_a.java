@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Day5_a {
     public static void main(String[] args) throws FileNotFoundException {
-         String filePath = "Day5_a/input.txt";
+         String filePath = "Day5_b/input.txt";
         ArrayList<String> lines = new ArrayList<>();
         int numLines=0;
 
@@ -29,6 +29,7 @@ public class Day5_a {
         ArrayList<Long> idList = new ArrayList<>();
         for(int i =lines.indexOf("")+1; i < lines.size(); i++){
             idList.add(Long.valueOf(lines.get(i)));
+
         }
 
         int passcode =0;
@@ -41,11 +42,10 @@ public class Day5_a {
                 }
             }
         }
-
+        
+        
         System.out.println("Passcode is: " + passcode);
         return;
-
-
-
     }
+
 }
